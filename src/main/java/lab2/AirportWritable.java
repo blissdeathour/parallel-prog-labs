@@ -2,6 +2,7 @@ package lab2;
 
 import org.apache.hadoop.io.Writable;
 
+import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
@@ -22,5 +23,10 @@ public class AirportWritable implements Writable {
         out.writeChars(description);
         out.writeChar('\n');
     }
-    
+
+    @Override
+    public void readFields(DataInput in) throws IOException {
+        code = in.readInt();
+        description = in.readLine();
+    }
 }
