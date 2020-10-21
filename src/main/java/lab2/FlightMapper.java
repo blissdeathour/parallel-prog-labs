@@ -7,7 +7,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
-    private static final int DEST_AIRPORT_ID = 14;
+    private static final int DEST_AIRPORT_ID_IND = 14;
+    private static final int 
     @Override
     protected void map(LongWritable key, Text value, Context context) {
 
