@@ -13,6 +13,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, IntWrit
             InterruptedException {
         if (key.get() == 0)
             return ;
-        String[] strings = value.toString().split(',');
+        String[] strings = value.toString().split(",");
+        String code = strings[0];
+        
     }
 }
