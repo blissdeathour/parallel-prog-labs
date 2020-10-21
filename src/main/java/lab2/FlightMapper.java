@@ -1,2 +1,4 @@
-package lab2;public class FlightMapper {
+package lab2;
+
+public class FlightMapper {
 }
