@@ -23,7 +23,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
         if (arrDelay != 0)
         {
             destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
-            context.write(new AirportID());
+            context.write(new AirportID(destAirportID, false), new Text(new String(arrDelay)));
         }
     }
 }
