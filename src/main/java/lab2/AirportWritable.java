@@ -32,6 +32,6 @@ public class AirportWritable implements Writable {
 
     @Override
     public String toString() {
-        return (S);
+        return (String.format("%d %s\n", code, description));
     }
 }
