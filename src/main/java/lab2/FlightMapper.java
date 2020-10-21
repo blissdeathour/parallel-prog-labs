@@ -12,18 +12,18 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
-        if (key.get() == 0)
-            return ;
         String  data[];
         int     destAirportID;
-        float  arrDelay;
+        float   arrDelay;
 
+        if (key.get() == 0)
+            return ;
         data = value.toString().split(",");
         arrDelay = Float.parseFloat(data[ARR_DELAY_IND]);
         if (arrDelay != 0)
         {
             destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
-            context.write(new AirportID(destAirportID, false), new Text(new String(arrDelay)));
+            context.write(new AirportID(destAirportID, false), new Text(Float.toString(arrDelay)));
         }
     }
 }
