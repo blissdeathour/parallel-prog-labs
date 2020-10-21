@@ -9,11 +9,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# Eclipse
-.classpath
-.project
-.settings/
-
 # Intellij
 .idea/
 *.iml
@@ -23,11 +18,8 @@ hs_err_pid*
 .DS_Store
 
 # Maven
-log/
+output/
 target/
-
-# Inclusions
-!lib/**
 
 # Compiled Files
 *.class
