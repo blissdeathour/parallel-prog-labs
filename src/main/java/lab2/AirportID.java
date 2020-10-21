@@ -14,5 +14,6 @@ public class AirportID implements WritableComparable<AirportID> {
         this.identifier = identifier;
     }
 
-    
+    @Override
+    public void write()
 }
