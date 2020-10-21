@@ -1,2 +1,7 @@
-package lab2;public class FlightWritable {
+package lab2;
+
+import org.apache.hadoop.io.Writable;
+
+public class FlightWritable implements Writable {
+    
 }
