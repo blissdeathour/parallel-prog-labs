@@ -1,6 +1,5 @@
 package lab2;
 
-import com.sun.org.apache.bcel.internal.generic.MULTIANEWARRAY;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
