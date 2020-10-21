@@ -14,8 +14,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, IntWrit
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
         String[]    strings;
-        int         code;
         String      name;
+        int         code;
 
         if (key.get() == 0)
             return ;
