@@ -11,14 +11,15 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, IntWrit
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
-        int         code;
         String[]    strings;
+        int         code;
+        String      name;
 
         if (key.get() == 0)
             return ;
         strings = value.toString().split(",");
         code = Integer.parseInt(strings[0]);
-        
+        name = strings[1];
 
     }
 }
