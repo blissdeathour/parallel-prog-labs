@@ -10,8 +10,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     private static final int AIRPORT_CODE_IND = 0;
     private static final int AIRPORT_NAME_IND = 1;
     @Override
-    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException
-    {
+    protected void map(LongWritable key, Text value, Context context) throws IOException,
+            InterruptedException {
         String[]    strings;
         String      name;
         int         code;
