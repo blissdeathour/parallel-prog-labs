@@ -26,5 +26,6 @@ public class AirportApp {
         job.setGroupingComparatorClass(AirportGroupingComparator.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
+        
     }
 }
