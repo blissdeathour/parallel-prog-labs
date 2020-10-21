@@ -11,6 +11,6 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, IntWrit
     @Override
     public void map(LongWritable key, Text text, Context context) throws IOException,
             InterruptedException {
-
+        
     }
 }
