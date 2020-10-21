@@ -17,6 +17,6 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
         String data[];
 
         data = value.toString().split(",");
-        
+
     }
 }
