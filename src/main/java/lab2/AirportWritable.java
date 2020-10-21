@@ -29,4 +29,9 @@ public class AirportWritable implements Writable {
         code = in.readInt();
         description = in.readLine();
     }
+
+    @Override
+    public String toString() {
+        return (S);
+    }
 }
