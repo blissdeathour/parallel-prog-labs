@@ -19,9 +19,9 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, IntWrit
 
         if (key.get() == 0)
             return ;
-        strings = value.toString().split(",");
+        strings = value.toString().split(",", 2);
         code = Integer.parseInt(strings[AIRPORT_CODE].replaceAll("\"", ""));
         name = strings[AIRPORT_NAME].replaceAll("\"", "");
-
+        context.write(new AirportID(code, true), new Text(name));
     }
 }
