@@ -15,4 +15,5 @@ public class AirportWritable implements Writable {
     }
 
     @Override
+    public void write()
 }
