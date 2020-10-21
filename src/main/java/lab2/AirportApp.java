@@ -1,5 +1,5 @@
 package lab2;
 
-public class AirportMapper {
+public class AirportApp {
 
 }
