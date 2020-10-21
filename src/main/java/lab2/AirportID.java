@@ -32,7 +32,7 @@ public class AirportID implements WritableComparable<AirportID> {
     }
 
     @Override
-    public int compareTo(AirportID cur)
+    public int compareTo(AirportID obj)
     {
         
     }
