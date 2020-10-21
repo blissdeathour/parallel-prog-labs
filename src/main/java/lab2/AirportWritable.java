@@ -13,5 +13,6 @@ public class AirportWritable implements Writable {
         this.code = code;
         this.description = description;
     }
+
     
 }
