@@ -1,4 +1,4 @@
 package lab2;
 
-public class AirportPartitioner {
+public class AirportPartitioner extends Partitioner<AirportID, Text>{
 }
