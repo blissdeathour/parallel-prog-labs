@@ -8,5 +8,7 @@ public class AirportGroupingComparator extends WritableComparator {
     }
 
     @Override
-    public int compare(WritableComparator )
+    public int compare(WritableComparator key1, WritableComparator key2) {
+        return (Integer.compare())
+    }
 }
