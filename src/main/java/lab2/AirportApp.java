@@ -9,6 +9,7 @@ public class AirportApp {
             System.exit(-1);
         }
         Job job = Job.getInstance();
+        job.setJarByClass(AirportApp.class);
         
     }
 }
