@@ -1,9 +1,11 @@
 package lab2;
 
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.mapred.TextInputFormat;
-import org.apache.hadoop.mapred.lib.MultipleInputs;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class AirportApp {
     public static void main(String[] args) throws Exception {
@@ -15,9 +17,7 @@ public class AirportApp {
         job.setJarByClass(AirportApp.class);
         job.setJobName("AirportApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
-
-
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
-
+        FileOutputFormat.setOutputPath();
     }
 }
