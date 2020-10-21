@@ -20,6 +20,8 @@ public class AirportApp {
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
-        job.setMapperClass();
+        job.setMapOutputKeyClass(AirportID.class);
+        job.setMapOutputValueClass(Text.class);
+        
     }
 }
