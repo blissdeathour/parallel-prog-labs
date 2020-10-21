@@ -36,5 +36,7 @@ public class AirportID implements WritableComparable<AirportID> {
     }
 
     @Override
-    public String toString()
+    public String toString() {
+        return (String.format("%d %d\n", airportID, identifier ? 1 : 0));
+    }
 }
