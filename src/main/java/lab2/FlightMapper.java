@@ -14,6 +14,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
             InterruptedException {
         if (key.get() == 0)
             return ;
+        String data[];
+
+        data = value.toString().split(",");
         
     }
 }
