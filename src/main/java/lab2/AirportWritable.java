@@ -6,5 +6,12 @@ public class AirportWritable implements Writable {
     int     code;
     String  description;
 
-    public 
+    public AirportWritable() {};
+
+    public AirportWritable(int code, String description)
+    {
+        this.code = code;
+        this.description = description;
+    }
+    
 }
