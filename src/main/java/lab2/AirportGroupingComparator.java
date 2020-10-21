@@ -9,6 +9,6 @@ public class AirportGroupingComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparator key1, WritableComparator key2) {
-        return (Integer.compare())
+        return (Integer.compare((AirportID)key1))
     }
 }
