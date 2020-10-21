@@ -18,10 +18,10 @@ public class AirportWritable implements Writable {
     }
 
     @Override
-    public void write(DataOutput out) throws IOException {
-        out.writeInt(code);
-        out.writeChars(description);
-        out.writeChar('\n');
+    public void write(DataOutput output) throws IOException {
+        output.writeInt(code);
+        output.writeChars(description);
+        output.writeChar('\n');
     }
 
     @Override
