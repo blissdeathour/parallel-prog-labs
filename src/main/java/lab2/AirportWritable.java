@@ -14,5 +14,5 @@ public class AirportWritable implements Writable {
         this.description = description;
     }
 
-    
+    @Override
 }
