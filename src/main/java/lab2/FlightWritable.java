@@ -18,9 +18,9 @@ public class FlightWritable implements Writable {
     }
 
     @Override
-    public void readFields(DataInput in) throws IOException {
-        destAirportID = in.readInt();
-        arrDelay = in.readFloat();
+    public void readFields(DataInput input) throws IOException {
+        destAirportID = input.readInt();
+        arrDelay = input.readFloat();
     }
 
     @Override

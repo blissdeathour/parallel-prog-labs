@@ -25,9 +25,9 @@ public class AirportWritable implements Writable {
     }
 
     @Override
-    public void readFields(DataInput in) throws IOException {
-        code = in.readInt();
-        description = in.readLine();
+    public void readFields(DataInput input) throws IOException {
+        code = input.readInt();
+        description = input.readLine();
     }
 
     @Override
