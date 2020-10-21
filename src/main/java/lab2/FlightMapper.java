@@ -16,11 +16,11 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
             return ;
         String  data[];
         int     destAirportID;
-        String  arrDelay;
+        float  arrDelay;
 
         data = value.toString().split(",");
-        arrDelay = data[ARR_DELAY_IND];
-        if (!arrDelay.isEmpty())
+        arrDelay = Float.parseFloat(data[ARR_DELAY_IND]);
+        if (arrDelay != 0)
         {
             destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
 
