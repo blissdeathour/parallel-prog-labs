@@ -34,4 +34,7 @@ public class AirportID implements WritableComparable<AirportID> {
     public int compareTo(AirportID obj) {
         return (this.airportID == obj.airportID ? this.identifier.compareTo(obj.identifier)  : this.airportID - obj.airportID);
     }
+
+    @Override
+    public String toString()
 }
