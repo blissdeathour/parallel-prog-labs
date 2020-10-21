@@ -14,9 +14,16 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
             InterruptedException {
         if (key.get() == 0)
             return ;
-        String data[];
+        String  data[];
+        int     destAirportID;
+        String  arrDelay;
 
         data = value.toString().split(",");
+        arrDelay = data[ARR_DELAY_IND];
+        if (!arrDelay.isEmpty())
+        {
+            destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
 
+        }
     }
 }
