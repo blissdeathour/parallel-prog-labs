@@ -20,7 +20,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
             return ;
         data = value.toString().split(",");
         arrDelay = Float.parseFloat(data[ARR_DELAY_IND]);
-        if (arrDelay != 0)
+        if (arrDelay > 0)
         {
             destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
             context.write(new AirportID(destAirportID, false), new Text(Float.toString(arrDelay)));
