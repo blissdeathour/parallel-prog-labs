@@ -7,8 +7,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
-    private static final int AIRPORT_CODE = 0;
-    private static final int AIRPORT_NAME = 1;
+    private static final int AIRPORT_CODE_IND = 0;
+    private static final int AIRPORT_NAME_IND = 1;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
@@ -19,8 +19,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
         if (key.get() == 0)
             return ;
         strings = value.toString().split(",", 2);
-        code = Integer.parseInt(strings[AIRPORT_CODE].replaceAll("\"", ""));
-        name = strings[AIRPORT_NAME].replaceAll("\"", "");
+        code = Integer.parseInt(strings[AIRPORT_CODE_IND].replaceAll("\"", ""));
+        name = strings[AIRPORT_NAME_IND].replaceAll("\"", "");
         context.write(new AirportID(code, true), new Text(name));
     }
 }
