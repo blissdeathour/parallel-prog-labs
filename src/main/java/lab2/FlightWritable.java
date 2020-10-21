@@ -10,8 +10,6 @@ public class FlightWritable implements Writable {
     int     destAirportID;
     float   arrDelay;
 
-    public FlightWritable() {}
-
     public FlightWritable(int destAirportID, float arrDelay) {
         this.destAirportID = destAirportID;
         this.arrDelay = arrDelay;

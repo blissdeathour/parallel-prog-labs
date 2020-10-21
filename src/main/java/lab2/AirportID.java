@@ -1,7 +1,6 @@
 package lab2;
 
 import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.io.WritableComparator;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -10,8 +9,6 @@ import java.io.IOException;
 public class AirportID implements WritableComparable<AirportID> {
     int     airportID;
     Boolean identifier;
-
-    AirportID() {}
 
     AirportID(int airportID, Boolean identifier) {
         this.airportID = airportID;
