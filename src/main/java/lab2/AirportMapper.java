@@ -1,2 +1,5 @@
-package lab2;public class AirportMapper {
+package lab2;
+
+public class AirportMapper {
+
 }
