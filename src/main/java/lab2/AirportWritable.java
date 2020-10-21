@@ -6,4 +6,5 @@ public class AirportWritable implements Writable {
     int     code;
     String  description;
 
+    public 
 }
