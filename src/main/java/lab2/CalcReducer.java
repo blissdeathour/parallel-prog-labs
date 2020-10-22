@@ -1,5 +1,5 @@
 package lab2;
 
-public class CalcReducer extends Reducer<{
+public class CalcReducer extends Reducer<AirportID, {
 
 }
