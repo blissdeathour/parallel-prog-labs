@@ -11,6 +11,8 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
     protected void reduce(AirportID key, Iterable<Text> values, Context context) throws IOException,
             InterruptedException {
         Iterator<Text> iterator = values.iterator();
+        if (!iterator.hasNext())
+            return ;
         
     }
 }
