@@ -10,6 +10,8 @@ public class AirportID implements WritableComparable<AirportID> {
     int     airportID;
     Boolean identifier;
 
+    AirportID() {}
+
     AirportID(int airportID, Boolean identifier) {
         this.airportID = airportID;
         this.identifier = identifier;
