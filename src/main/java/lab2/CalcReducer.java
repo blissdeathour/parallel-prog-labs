@@ -10,12 +10,18 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
     @Override
     protected void reduce(AirportID key, Iterable<Text> values, Context context) throws IOException,
             InterruptedException {
-        Iterator<Text> iterator = values.iterator();
+        Iterator<Text> iterator;
+        float minVal;
+        float maxVal;
+        String output;
+
+
+        iterator = values.iterator();
         if (!iterator.hasNext())
             return ;
-        float minVal = Integer.MAX_VALUE;
-        float maxVal = Integer.MIN_VALUE;
-        String name = iterator.next().toString();
+        minVal = Integer.MAX_VALUE;
+        maxVal = Integer.MIN_VALUE;
+        output += iterator.next().toString();
         float avg = 0;
         int count = 1;
         while (iterator.hasNext()) {
@@ -25,6 +31,6 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
             avg = (avg * count + val) / ++count;
         }
         String result = String.format("Name: %s, Min: %f, Max: %f, Avg: %f", name, minVal, maxVal, avg);
-        context.write(new Text(Integer.toString(key.airportID)), new Text());
+        context.write(new Text(Integer.toString(key.airportID)), new Text(result));
     }
 }
