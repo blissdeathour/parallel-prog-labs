@@ -22,9 +22,9 @@ public class AirportApp {
 
         job.setMapOutputKeyClass(AirportID.class);
         job.setMapOutputValueClass(Text.class);
-        job.setReducerClass(CalcReducer.class);
         job.setPartitionerClass(AirportPartitioner.class);
         job.setGroupingComparatorClass(AirportGroupingComparator.class);
+        job.setReducerClass(CalcReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
