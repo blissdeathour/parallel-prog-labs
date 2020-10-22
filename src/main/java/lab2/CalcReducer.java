@@ -13,6 +13,8 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         Iterator<Text> iterator = values.iterator();
         if (!iterator.hasNext())
             return ;
+        float minVal = Integer.MAX_VALUE;
+        float maxVal - Integer.MIN_VALUE;
         
     }
 }
