@@ -19,7 +19,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
         if (key.get() == 0)
             return ;
         data = value.toString().split(",");
-        arrDelay = Float.parseFloat(data[ARR_DELAY_IND]);
+        arrDelay = 0;
+        if (!data[ARR_DELAY_IND].isEmpty())
+            arrDelay = Float.parseFloat(data[ARR_DELAY_IND]);
         if (arrDelay > 0)
         {
             destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
