@@ -9,6 +9,6 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
     @Override
     protected void reduce(AirportID key, Iterable<Text> values, Context context) throws IOException,
             InterruptedException {
-        
+
     }
 }
