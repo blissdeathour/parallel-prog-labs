@@ -24,6 +24,6 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
             maxVal = Math.max(val, maxVal);
             avg = (avg * count + val) / ++count;
         }
-        String result = String.format("")
+        String result = String.format("%s ")
     }
 }
