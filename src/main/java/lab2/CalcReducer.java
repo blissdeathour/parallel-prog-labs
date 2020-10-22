@@ -22,7 +22,7 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
             float val = Float.parseFloat(iterator.next().toString());
             minVal = Math.min(val, minVal);
             maxVal = Math.max(val, maxVal);
-            avg = (avg * count + val) / count++;
+            avg = (avg * count + val) / ++count;
         }
     }
 }
