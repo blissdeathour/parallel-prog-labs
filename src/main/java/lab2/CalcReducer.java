@@ -16,5 +16,6 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         float minVal = Integer.MAX_VALUE;
         float maxVal = Integer.MIN_VALUE;
         String name = iterator.next().toString();
+        
     }
 }
