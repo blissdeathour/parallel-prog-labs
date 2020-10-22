@@ -19,6 +19,7 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         float avg = 0;
         int count = 1;
         while (iterator.hasNext()) {
+            float val = Float.parseFloat(iterator.next().toString());
             
         }
     }
