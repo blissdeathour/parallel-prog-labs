@@ -17,6 +17,11 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         float           avg;
         int             count;
 
+        Iterator<Text> checkiter = values.iterator();
+        while (checkiter.hasNext())
+        {
+            System.out.println("%s ");
+        }
         iterator = values.iterator();
         minVal = Integer.MAX_VALUE;
         maxVal = Integer.MIN_VALUE;
