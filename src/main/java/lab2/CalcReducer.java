@@ -21,6 +21,7 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         minVal = Integer.MAX_VALUE;
         maxVal = Integer.MIN_VALUE;
         output = "Name: " + iterator.next().toString() + ", ";
+        System.out.printf("Name: %s \n", iterator.toString());
         if (!iterator.hasNext())
             return ;
         avg = 0;
