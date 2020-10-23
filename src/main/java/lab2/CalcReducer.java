@@ -26,7 +26,9 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         avg = 0;
         count = 1;
         while (iterator.hasNext()) {
-            float val = Float.parseFloat(iterator.next().toString());
+            float val = 0;
+            System.out.printf("Float: %s \n", iterator.next().toString());
+//            float val = Float.parseFloat(iterator.next().toString());
             minVal = Math.min(val, minVal);
             maxVal = Math.max(val, maxVal);
             avg = (avg * count + val) / ++count;
