@@ -21,14 +21,11 @@ public class CalcReducer extends Reducer<AirportID, Text, Text, Text> {
         minVal = Integer.MAX_VALUE;
         maxVal = Integer.MIN_VALUE;
         output = "Name: " + iterator.next().toString() + ", ";
-//        System.out.printf("Name: %s \n", iterator.next().toString());
         if (!iterator.hasNext())
             return ;
         avg = 0;
         count = 1;
         while (iterator.hasNext()) {
-//            float val = 0;
-//            System.out.printf("Float: %s \n", iterator.next().toString());
             float val = Float.parseFloat(iterator.next().toString());
             minVal = Math.min(val, minVal);
             maxVal = Math.max(val, maxVal);

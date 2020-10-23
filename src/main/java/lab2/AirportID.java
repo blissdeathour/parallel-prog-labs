@@ -34,7 +34,7 @@ public class AirportID implements WritableComparable<AirportID> {
         if (airportID == obj.airportID)
             return identifier ? -1 : 1;
         return airportID - obj.airportID;
-//        return (this.airportID == obj.airportID ? this.identifier.compareTo(obj.identifier)  : this.airportID - obj.airportID);
+        return (this.airportID == obj.airportID ? (identifier ? -1 : 1)  : this.airportID - obj.airportID);
     }
 
     @Override
