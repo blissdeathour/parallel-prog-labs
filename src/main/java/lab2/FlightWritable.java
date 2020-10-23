@@ -29,6 +29,6 @@ public class FlightWritable implements Writable {
 
     @Override
     public String toString() {
-        return (String.format("%d %f\n", destAirportID, arrDelay));
+        return (String.format("%d %f", destAirportID, arrDelay));
     }
 }
