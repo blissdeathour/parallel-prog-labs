@@ -10,11 +10,11 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     private static final int AIRPORT_CODE_IND = 0;
     private static final int AIRPORT_NAME_IND = 1;
     private static final int LIMIT = 2;
-    private static final String DELIMITER_1 = ",";
+    private static final String AIRPORT_DELIMITER = ",";
 
 
     private static String[] splitter(Text value) {
-        return (value.toString().split(DELIMITER_1, LIMIT));
+        return (value.toString().split(AIRPORT_DELIMITER, LIMIT));
     }
 
     private static String removeQuoter(String string) {
