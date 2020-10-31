@@ -8,10 +8,10 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class AirportApp {
-    private static final 
+    private static final int LENGTH_LIMIT = 3;
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 3)
+        if (args.length != LENGTH_LIMIT)
         {
             System.exit(-1);
         }
