@@ -10,8 +10,6 @@ public class AirportID implements WritableComparable<AirportID> {
     int     airportID;
     Boolean identifier;
 
-    AirportID() {}
-
     AirportID(int airportID, Boolean identifier) {
         this.airportID = airportID;
         this.identifier = identifier;
@@ -31,9 +29,6 @@ public class AirportID implements WritableComparable<AirportID> {
 
     @Override
     public int compareTo(AirportID obj) {
-//        if (airportID == obj.airportID)
-//            return identifier ? -1 : 1;
-//        return airportID - obj.airportID;
         return (this.airportID == obj.airportID ? (identifier ? -1 : 1)  : this.airportID - obj.airportID);
     }
 
