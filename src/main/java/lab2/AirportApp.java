@@ -11,8 +11,7 @@ public class AirportApp {
     private static final int LENGTH_LIMIT = 3;
 
     public static void main(String[] args) throws Exception {
-        if (args.length != LENGTH_LIMIT)
-        {
+        if (args.length != LENGTH_LIMIT) {
             System.exit(-1);
         }
         Job job = Job.getInstance();

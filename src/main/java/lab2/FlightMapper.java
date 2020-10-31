@@ -22,8 +22,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
         int             destAirportID;
         float           arrDelay;
 
-        if (key.get() == 0)
-            return ;
+        if (key.get() == 0) {
+            return;
+        }
         data = flightSplitter(value);
         arrDelay = 0;
         if (!data[ARR_DELAY_IND].isEmpty())

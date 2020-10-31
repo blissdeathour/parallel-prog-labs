@@ -13,7 +13,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     private static final String AIRPORT_DELIMITER = ",";
 
 
-    private static String[] splitter(Text value) {
+    private static String[] airportSplitter(Text value) {
         return (value.toString().split(AIRPORT_DELIMITER, LIMIT));
     }
 
@@ -28,9 +28,10 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
         String      name;
         int         code;
 
-        if (key.get() == 0)
-            return ;
-        strings = splitter(value);
+        if (key.get() == 0) {
+            return;
+        }
+        strings = airportSplitter(value);
         code = Integer.parseInt(removeQuoter(strings[AIRPORT_CODE_IND]));
         name = removeQuoter(strings[AIRPORT_NAME_IND]);
         context.write(new AirportID(code, true), new Text(name));
