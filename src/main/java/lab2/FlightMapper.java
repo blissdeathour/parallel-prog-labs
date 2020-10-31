@@ -10,6 +10,8 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
     private static final int DEST_AIRPORT_ID_IND = 14;
     private static final int ARR_DELAY_IND = 18;
     private static final String FLIGHT_DELIMITER = ",";
+    private static final boolean FLIGHT_FLAG = false;
+    private static final int ARR_DELAY_CONST = 0;
 
     private static String[] flightSplitter(Text value) {
         return (value.toString().split(FLIGHT_DELIMITER));
@@ -26,13 +28,13 @@ public class FlightMapper extends Mapper<LongWritable, Text, AirportID, Text>{
             return;
         }
         data = flightSplitter(value);
-        arrDelay = 0;
+        arrDelay = ARR_DELAY_CONST;
         if (!data[ARR_DELAY_IND].isEmpty())
             arrDelay = Float.parseFloat(data[ARR_DELAY_IND]);
-        if (arrDelay > 0)
+        if (arrDelay > ARR_DELAY_CONST)
         {
             destAirportID = Integer.parseInt(data[DEST_AIRPORT_ID_IND]);
-            context.write(new AirportID(destAirportID, false), new Text(Float.toString(arrDelay)));
+            context.write(new AirportID(destAirportID, FLIGHT_FLAG), new Text(Float.toString(arrDelay)));
         }
     }
 }

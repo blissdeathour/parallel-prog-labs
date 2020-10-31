@@ -11,6 +11,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
     private static final int AIRPORT_NAME_IND = 1;
     private static final int LIMIT = 2;
     private static final String AIRPORT_DELIMITER = ",";
+    private static final boolean AIRPORT_FLAG = true;
 
 
     private static String[] airportSplitter(Text value) {
@@ -34,6 +35,6 @@ public class AirportMapper extends Mapper<LongWritable, Text, AirportID, Text> {
         strings = airportSplitter(value);
         code = Integer.parseInt(removeQuoter(strings[AIRPORT_CODE_IND]));
         name = removeQuoter(strings[AIRPORT_NAME_IND]);
-        context.write(new AirportID(code, true), new Text(name));
+        context.write(new AirportID(code, AIRPORT_FLAG), new Text(name));
     }
 }
