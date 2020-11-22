@@ -14,6 +14,7 @@ import java.util.Collections;
 
 public class FlightApp {
     final private static String DELIMITER = ",";
+    final private static int 
 
 
     private static String removeQuotes(String row) {
@@ -52,7 +53,7 @@ public class FlightApp {
             if (e._1.get() != 0) {
                 String line = e._2.toString();
                 String[] splitted = line.split(DELIMITER, -1);
-                
+
             }
         })
     }
