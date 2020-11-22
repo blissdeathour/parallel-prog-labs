@@ -54,9 +54,18 @@ public class FlightApp {
         JavaPairRDD<Tuple2<Long, Long>, FlightData> flightRDD = flightFile.flatMapToPair(e -> {
             if (e._1.get() != 0) {
                 String line = e._2.toString();
-                String[] splitted = line.split(DELIMITER, -1);
-                long 
+                String[] splintedStr = line.split(DELIMITER, -1);
+                long depCode = Long.parseLong(splintedStr[DEP_AIRPORT]);
+                long destCode = Long.parseLong(splintedStr[DEST_AITPORT]);
+                String rowDelay = splintedStr[DEL_IND];
+
+                return (new IteratorContainer<>(new Tuple2<>(new Tuple2<>(depCode, destCode), new FlightData(rowDelay))).getIterator());
             }
-        })
+            else {
+                return (Collections.emptyIterator());
+            }
+        });
+
+        fina
     }
 }
