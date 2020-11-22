@@ -11,7 +11,8 @@
     <dependencies>
 		<dependency>
 			<groupId>junit</groupId>
-			<artifactId>
+			<artifactId>junit</artifactId>
+			<version></version>
 		</dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
