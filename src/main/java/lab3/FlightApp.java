@@ -19,6 +19,8 @@ public class FlightApp {
         JavaPairRDD<LongWritable, Text> airportFile = sc.hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class);
         JavaPairRDD<LongWritable, Text> flightsFile = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
 
-        JavaPairRDD<Long, String> airportRDD = airportFile.flatMapToPair()
+        JavaPairRDD<Long, String> airportRDD = airportFile.flatMapToPair(e -> {
+            
+        })
     }
 }
