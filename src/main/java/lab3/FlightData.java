@@ -4,6 +4,7 @@ public class FlightData {
     public Float minDelay;
     public Integer totCount;
     public Integer wrongCount;
+    final static double CONST_MIN = 1e-5;
 
     public FlightData(String row) {
         totCount = 1;
@@ -13,7 +14,7 @@ public class FlightData {
         }
         else {
             minDelay = Float.parseFloat(row);
-            wrongCount = minDelay >= 1e-5 ? 1 : 0;
+            wrongCount = minDelay >= CONST_MIN ? 1 : 0;
         }
     }
 
@@ -23,10 +24,27 @@ public class FlightData {
         this.wrongCount = wrongCount;
     }
 
+    public float getRatio() {
+        return (float) wrongCount / (float) totCount;
+    }
+
     public FlightData fold(FlightData obj) {
         float delay;
-        if (minDelay > 1e-5 && obj.minDelay > 1e-5) {
-            
+        if (minDelay > CONST_MIN && obj.minDelay > CONST_MIN) {
+            delay = Math.min(minDelay, obj.minDelay);
         }
+        else if (minDelay > CONST_MIN && obj.minDelay <= CONST_MIN)
+        {
+            delay = minDelay;
+        }
+        else if (minDelay <= CONST_MIN && obj.minDelay > CONST_MIN)
+        {
+            delay = obj.minDelay;
+        }
+        else {
+            delay = 0.f;
+        }
+        return (new FlightData(delay, totCount + obj.totCount, wrongCount + obj.wrongCount));
     }
+
 }
