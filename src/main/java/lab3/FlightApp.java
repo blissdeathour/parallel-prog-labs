@@ -22,7 +22,7 @@ public class FlightApp {
 
         JavaPairRDD<Long, String> airportRDD = airportFile.flatMapToPair(e -> {
             if (e._1.get() != 0) {
-                return new IteratorContainer<>()
+                return new IteratorContainer<>(parseAirportEntry(e._2.toString())).
             }
         })
     }
