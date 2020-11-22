@@ -70,6 +70,8 @@ public class FlightApp {
 
         final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportRDD.collectAsMap());
         JavaPairRDD<Tuple2<Long, Long>, FlightData> reducedByKey = flightRDD.reduceByKey(FlightData::fold);
-        
+        JavaPairRDD<String, String> result = reducedByKey.mapToPair(e -> {
+            String 
+        })
     }
 }
