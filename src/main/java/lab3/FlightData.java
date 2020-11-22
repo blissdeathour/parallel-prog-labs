@@ -13,7 +13,20 @@ public class FlightData {
         }
         else {
             minDelay = Float.parseFloat(row);
-            wrongCount = minDelay >= 
+            wrongCount = minDelay >= 1e-5 ? 1 : 0;
+        }
+    }
+
+    public FlightData(Float minDelay, Integer totCount, Integer wrongCount) {
+        this.minDelay = minDelay;
+        this.totCount = totCount;
+        this.wrongCount = wrongCount;
+    }
+
+    public FlightData fold(FlightData obj) {
+        float delay;
+        if (minDelay > 1e-5 && obj.minDelay > 1e-5) {
+            
         }
     }
 }
