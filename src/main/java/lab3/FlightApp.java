@@ -6,11 +6,13 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 import scala.collection.convert.Wrappers;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 
 public class FlightApp {
     final private static String DELIMITER = ",";
@@ -66,6 +68,8 @@ public class FlightApp {
             }
         });
 
-        fina
+        final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportRDD.collectAsMap());
+        JavaPairRDD<Tuple2<Long, Long>, FlightData> reducedByKey = flightRDD.reduceByKey(FlightData::fold);
+        
     }
 }
