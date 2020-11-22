@@ -9,6 +9,9 @@ import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 import scala.collection.convert.Wrappers;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class FlightApp {
     final private static String DELIMITER = ",";
 
@@ -38,8 +41,13 @@ public class FlightApp {
 
         JavaPairRDD<Long, String> airportRDD = airportFile.flatMapToPair(e -> {
             if (e._1.get() != 0) {
-                return new IteratorContainer<>(parseAirportEntry(e._2.toString())).
+                return (new IteratorContainer<>(parseAirportEntry(e._2.toString())).getIterator());
             }
-        })
+            else {
+                return (Collections.emptyIterator())
+            }
+        });
+
+        JavaPairRDD<Tuple2<Long, Long>, FlightData>
     }
 }
