@@ -12,7 +12,8 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version></version>
+			<version>4.11</version>
+			<scope>provided</scope>
 		</dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
