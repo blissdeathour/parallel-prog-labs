@@ -15,7 +15,9 @@
 			<version>4.11</version>
 			<scope>provided</scope>
 		</dependency>
-		<>
+		<dependency>
+			<
+		</dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
