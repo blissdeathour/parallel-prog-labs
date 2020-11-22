@@ -48,6 +48,6 @@ public class FlightApp {
             }
         });
 
-        JavaPairRDD<Tuple2<Long, Long>, FlightData>
+        JavaPairRDD<Tuple2<Long, Long>,>
     }
 }
