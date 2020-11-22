@@ -37,7 +37,7 @@ public class FlightApp {
         JavaSparkContext sc = new JavaSparkContext(cf);
 
         JavaPairRDD<LongWritable, Text> airportFile = sc.hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class);
-        JavaPairRDD<LongWritable, Text> flightsFile = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
+        JavaPairRDD<LongWritable, Text> flightFile = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
 
         JavaPairRDD<Long, String> airportRDD = airportFile.flatMapToPair(e -> {
             if (e._1.get() != 0) {
@@ -48,6 +48,12 @@ public class FlightApp {
             }
         });
 
-        JavaPairRDD<Tuple2<Long, Long>,>
+        JavaPairRDD<Tuple2<Long, Long>, FlightData> flightRDD = flightFile.flatMapToPair(e -> {
+            if (e._1.get() != 0) {
+                String line = e._2.toString();
+                String[] splitted = line.split(DELIMITER, -1);
+                
+            }
+        })
     }
 }
