@@ -18,10 +18,11 @@ public class FlightApp {
     }
 
     private static Tuple2<Long, String> parseAirportEntry(String row) {
-        int delim = row.indexOf(DELIMETER);
-        String rowCode;
+        String rowCode, name;
 
-        rowCode = rem
+        rowCode = removeQuotes(row.substring(0, row.indexOf(DELIMETER)));
+        name = removeQuotes(row.substring(row.indexOf(DELIMETER) + 1, row.length()));
+        return (new Tuple2<>(Long.parseLong(rowCode), name));
     }
 
     public static void main(String[] args) throws Exception {
