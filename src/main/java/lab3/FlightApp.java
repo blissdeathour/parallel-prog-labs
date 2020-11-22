@@ -17,6 +17,7 @@ public class FlightApp {
         JavaSparkContext sc = new JavaSparkContext(cf);
 
         JavaPairRDD<LongWritable, Text> airportFile = sc.hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class);
-        JavaPairRDD<Long, Long> airport
+        JavaPairRDD<Long, Long> flightsFile = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
+        
     }
 }
