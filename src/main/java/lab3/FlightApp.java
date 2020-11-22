@@ -10,7 +10,7 @@ import scala.Tuple2;
 import scala.collection.convert.Wrappers;
 
 public class FlightApp {
-    final private static String DELIMETER = ",";
+    final private static String DELIMITER = ",";
 
 
     private static String removeQuotes(String row) {
@@ -20,8 +20,8 @@ public class FlightApp {
     private static Tuple2<Long, String> parseAirportEntry(String row) {
         String rowCode, name;
 
-        rowCode = removeQuotes(row.substring(0, row.indexOf(DELIMETER)));
-        name = removeQuotes(row.substring(row.indexOf(DELIMETER) + 1, row.length()));
+        rowCode = removeQuotes(row.substring(0, row.indexOf(DELIMITER)));
+        name = removeQuotes(row.substring(row.indexOf(DELIMITER) + 1, row.length()));
         return (new Tuple2<>(Long.parseLong(rowCode), name));
     }
 
