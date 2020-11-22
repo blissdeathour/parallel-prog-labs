@@ -6,9 +6,18 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
 import scala.collection.convert.Wrappers;
 
 public class FlightApp {
+    final private static String DELIMETER = ",";
+
+
+    private static Tuple2<Long, String> parseAirportEntry(String row) {
+        int delim = row.indexOf(DELIMETER);
+        String row
+    }
+
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
             System.exit(-1);
