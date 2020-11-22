@@ -13,9 +13,15 @@ public class FlightApp {
     final private static String DELIMETER = ",";
 
 
+    private static String removeQuotes(String row) {
+        return (row.replaceAll("\"", ""));
+    }
+
     private static Tuple2<Long, String> parseAirportEntry(String row) {
         int delim = row.indexOf(DELIMETER);
-        String row
+        String rowCode;
+
+        rowCode = rem
     }
 
     public static void main(String[] args) throws Exception {
