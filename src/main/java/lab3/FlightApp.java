@@ -6,6 +6,7 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.collection.convert.Wrappers;
 
 public class FlightApp {
     public static void main(String[] args) throws Exception {
@@ -20,7 +21,9 @@ public class FlightApp {
         JavaPairRDD<LongWritable, Text> flightsFile = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
 
         JavaPairRDD<Long, String> airportRDD = airportFile.flatMapToPair(e -> {
-            if (e._1.get() != 0)
+            if (e._1.get() != 0) {
+                return new IteratorWrapper<>()
+            }
         })
     }
 }
