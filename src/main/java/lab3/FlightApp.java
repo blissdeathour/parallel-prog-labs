@@ -73,7 +73,11 @@ public class FlightApp {
         JavaPairRDD<String, String> result = reducedByKey.mapToPair(e -> {
             String name = String.format("[%d] %s -> [%d] %s", e._1._1, airportInfoBroadcasted.value().get(e._1._1),
                     e._1._2, airportInfoBroadcasted.value().get(e._1._2));
-            String val = String.format("Min: %f; Ration: %.2f%%; Total: %d", e._2.minDelay, e._2.getRatio() * )
-        })
+            String val = String.format("Min: %f; Ration: %.2f%%; Total: %d", e._2.minDelay, e._2.getRatio() * 100.f, e._2.totCount);
+            return (new Tuple2<>(name, val));
+        });
+
+
+        result.saveAsTextFile(args[2]);
     }
 }
