@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class FlightApp {
     final private static String DELIMITER = ",";
-    final private static int DEP_AIRPORT = 11;
+    final private static int DEPART_AIRPORT = 11;
     final private static int DEST_AIRPORT = 14;
     final private static int DEL_IND = 18;
 
@@ -57,7 +57,7 @@ public class FlightApp {
             if (e._1.get() != 0) {
                 String line = e._2.toString();
                 String[] splintedStr = line.split(DELIMITER, -1);
-                long depCode = Long.parseLong(splintedStr[DEP_AIRPORT]);
+                long depCode = Long.parseLong(splintedStr[DEPART_AIRPORT]);
                 long destCode = Long.parseLong(splintedStr[DEST_AIRPORT]);
                 String rowDelay = splintedStr[DEL_IND];
 
@@ -71,7 +71,7 @@ public class FlightApp {
         final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportRDD.collectAsMap());
         JavaPairRDD<Tuple2<Long, Long>, FlightData> reducedByKey = flightRDD.reduceByKey(FlightData::fold);
         JavaPairRDD<String, String> result = reducedByKey.mapToPair(e -> {
-            String dep
+            String depart = 
         })
     }
 }
