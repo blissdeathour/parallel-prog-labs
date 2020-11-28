@@ -49,7 +49,7 @@ public class FlightApp {
                 return (new IteratorContainer<>(parseAirportEntry(e._2.toString())).getIterator());
             }
             else {
-                return (Collections.emptyIterator())
+                return (Collections.emptyIterator());
             }
         });
 
