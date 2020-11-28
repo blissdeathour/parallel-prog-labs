@@ -33,7 +33,7 @@ public class FlightApp {
         return (new Tuple2<>(Long.parseLong(rowCode), name));
     }
 
-
+    private static IteratorContainer parseAirportFile()
     
 
     public static void main(String[] args) throws Exception {
