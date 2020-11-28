@@ -76,8 +76,7 @@ public class FlightApp {
             String val = String.format("Min: %f; Ration: %.2f%%; Total: %d", e._2.minDelay, e._2.getRatio() * 100.f, e._2.totCount);
             return (new Tuple2<>(name, val));
         });
-
-
+        
         result.saveAsTextFile(args[2]);
     }
 }
