@@ -71,7 +71,9 @@ public class FlightApp {
         final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportRDD.collectAsMap());
         JavaPairRDD<Tuple2<Long, Long>, FlightData> reducedByKey = flightRDD.reduceByKey(FlightData::fold);
         JavaPairRDD<String, String> result = reducedByKey.mapToPair(e -> {
-            String depart = 
+            String name = String.format("[%d] %s -> [%d] %s", e._1._1, airportInfoBroadcasted.value().get(e._1._1),
+                    e._1._2, airportInfoBroadcasted.value().get(e._1._2));
+            String val = String.format("Min: %f; Ration: %.2f; Total: %d")
         })
     }
 }
