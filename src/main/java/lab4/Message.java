@@ -58,3 +58,4 @@ public static void getPubID() { return this.pubID; }
         }
         return (builder.deleteCharAt(builder.length() - 1).append(}).toString());
     }
+public static void getPubID() { return this.pubID; }
