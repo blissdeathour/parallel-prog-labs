@@ -4,5 +4,5 @@ import akka.actor.AbstractActor;
 
 public class ImplementActor extends AbstractActor {
 
-    public 
+    public static void ImplemenrActor();
 }
