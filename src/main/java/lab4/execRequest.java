@@ -24,18 +24,22 @@ public class execRequest {
             this.expectedResult = expectedResult;
         }
 
-         public Object[] getParams() {
+        public String getExpectedResult() {
+            return (this.expectedResult);
+        }
+
+        public Object[] getParams() {
             return (this.params);
-         }
+        }
 
-         public void setParams(Object[] params) {
+        public void setParams(Object[] params) {
             this.params = params;
-         }
+        }
 
-         @Override
+        @Override
         public String toString() {
             return testName;
-         }
+        }
     }
     private String packageID;
     private String jsScript;
@@ -65,12 +69,20 @@ public class execRequest {
         this.funcName = funcName;
     }
 
+    public String getFuncName() {
+        return (this.funcName);
+    }
+
     public TestEntry[] getTests() {
         return (this.tests);
     }
 
     public void setTests(TestEntry[] tests) {
         this.tests = tests;
+    }
+
+    public void setJsScript(String jsScript) {
+        this.jsScript = jsScript;
     }
 
     @Override
