@@ -19,8 +19,11 @@ public class ImplementActor extends AbstractActor {
         Invocable invocable = (Invocable) engine;
         TestsResult testsResult = new TestsResult();
 
-        for (execRequest.TestEntry : msg.tests) {
-            String result = invocable.invokeFunction(msg.)
+        for (execRequest.TestEntry test : msg.getTests()) {
+            String result = invocable.invokeFunction(msg.getFunction(), test.getParams()).toString();
+            if (result.equals(test.getExpectedResult())) {
+                System.out.println("");
+            }
         }
     }
 }

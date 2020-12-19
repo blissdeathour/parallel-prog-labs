@@ -27,6 +27,10 @@ public class execMsg extends execRequest {
         return (this.packageID);
     }
 
+    public String getFunction() {
+        return (this.function);
+    }
+
     public TestEntry[] getTests() {
         return (this.tests);
     }
