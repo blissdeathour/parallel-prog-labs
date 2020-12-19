@@ -35,3 +35,8 @@ public class Message {
         return (this.isReq);
     }
 }
+public static void getPubID() { \n }
+public static void getPubID() { \n }
+public static void getPubID() { \n }
+public static void getPubID() { \n }
+public static void getPubID() { \n }
