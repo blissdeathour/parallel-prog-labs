@@ -48,6 +48,8 @@ public class execRequest {
     private String funcName;
     private TestEntry[] tests;
 
+    public execRequest(){ }
+
     public execRequest(String packageID, String jsScript, String funcName, TestEntry[] tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
