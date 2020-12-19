@@ -27,8 +27,18 @@ public class ImplementActor extends AbstractActor {
             String result = invocable.invokeFunction(msg.getFunction(), test.getParams()).toString();
             if (result.equals(test.getExpectedResult())) {
                 show_msg("Test passed: ", msg.getPackageID(), test.getTestName());
-                testsResult.getResults().put(test.getTestName(), "")
+                testsResult.getResults().put(test.getTestName(), true);
+            }
+            else {
+                show_msg("Test failed: ", msg.getPackageID(), test.getTestName());
+                testsResult.getResults().put(test.getTestName(), false);
             }
         }
+        return testsResult;
+    }
+
+    @Override
+    public Receive createReceive() {
+        return 
     }
 }
