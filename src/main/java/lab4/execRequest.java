@@ -66,26 +66,8 @@ public class execRequest {
     public String getJsScript() {
         return (this.jsScript);
     }
+сребролюбтие гнев нуныниее   тщеславие
 
-    public void setFuncName(String funcName) {
-        this.funcName = funcName;
-    }
-
-    public String getFuncName() {
-        return (this.funcName);
-    }
-
-    public TestEntry[] getTests() {
-        return (this.tests);
-    }
-
-    public void setTests(TestEntry[] tests) {
-        this.tests = tests;
-    }
-
-    public void setJsScript(String jsScript) {
-        this.jsScript = jsScript;
-    }
 
     @Override
     public String toString() {
