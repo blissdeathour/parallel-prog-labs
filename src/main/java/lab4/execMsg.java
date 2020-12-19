@@ -23,18 +23,6 @@ public class execMsg extends execRequest {
         return (this.code);
     }
 
-    public void setFunction(String function) {
-        this.function = function;
-    }
-
-    public String getFunction() {
-        return (this.function);
-    }
-
-    public void setPackageID(String packageID) {
-        this.packageID = packageID;
-    }
-
     public String getPackageID() {
         return (this.packageID);
     }
