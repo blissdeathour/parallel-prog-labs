@@ -19,6 +19,6 @@ public class ImplementActor extends AbstractActor {
         Invocable invocable = (Invocable) engine;
         TestsResult testsResult = new TestsResult();
 
-        for (ExecuteRequs)
+        for (execRequest.TestEntry : msg.tes)
     }
 }
