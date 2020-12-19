@@ -1,2 +1,5 @@
-package lab4;public class ImplementActor {
+package lab4;
+
+public class ImplementActor {
+    
 }
