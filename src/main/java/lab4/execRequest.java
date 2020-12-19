@@ -55,5 +55,9 @@ public class execRequest {
         this.packageID = packageID;
     }
 
+    public String getJsScript() {
+        return (this.jsScript);
+    }
+
     
 }
