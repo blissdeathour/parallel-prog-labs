@@ -23,5 +23,11 @@ public class execMsg extends execRequest {
         return (this.code);
     }
 
+    public String getPackageID() {
+        return (this.packageID);
+    }
 
+    public TestEntry[] getTests() {
+        return (this.tests);
+    }
 }
