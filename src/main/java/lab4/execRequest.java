@@ -40,11 +40,13 @@ public class execRequest {
     private String packageID;
     private String jsScript;
     private String funcName;
+    private TestEntry[] tests;
 
-    public execRequest(String packageID, String jsScript, String funcName) {
+    public execRequest(String packageID, String jsScript, String funcName, TestEntry[] tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
         this.funcName = funcName;
+        this.tests = tests;
     }
 
     public String getPackageID() {
@@ -60,6 +62,19 @@ public class execRequest {
     }
 
     public void setFuncName(String funcName) {
-        
+        this.funcName = funcName;
+    }
+
+    public TestEntry[] getTests() {
+        return (this.tests);
+    }
+
+    public void setTests(TestEntry[] tests) {
+        this.tests = tests;
+    }
+
+    @Override
+    public String toString() {
+        return (packageID);
     }
 }
