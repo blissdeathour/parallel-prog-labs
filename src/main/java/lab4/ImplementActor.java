@@ -16,7 +16,7 @@ public class ImplementActor extends AbstractActor {
         System.out.printf(msg + packageID + '-' + testName);
     }
 
-    private static TestsResult execTests(execMsg msg) throws Exception {
+    private TestsResult execTests(execMsg msg) throws Exception {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
         engine.eval(msg.getCode());
 
@@ -26,7 +26,8 @@ public class ImplementActor extends AbstractActor {
         for (execRequest.TestEntry test : msg.getTests()) {
             String result = invocable.invokeFunction(msg.getFunction(), test.getParams()).toString();
             if (result.equals(test.getExpectedResult())) {
-                show
+                show_msg("Test passed: ", msg.getPackageID(), test.getTestName());
+                testsResult.set
             }
         }
     }
