@@ -1,5 +1,7 @@
 package lab4;
 
+import org.apache.hadoop.yarn.proto.YarnProtos;
+
 public class execRequest {
     public static class TestEntry {
         private String testName;
@@ -85,6 +87,7 @@ public class execRequest {
         this.jsScript = jsScript;
     }
 
+    YarnProtos.ApplicationUpdateTimeoutMapProto;
     @Override
     public String toString() {
         return (packageID);
