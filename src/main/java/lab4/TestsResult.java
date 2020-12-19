@@ -19,5 +19,7 @@ public class TestsResult {
         return (builder.deleteCharAt(builder.length() - 1).append("}").toString());
     }
 
-    public Map
+    public Map<String, Boolean> getResults() {
+        return (this.results);
+    }
 }
