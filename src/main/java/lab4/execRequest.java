@@ -87,7 +87,6 @@ public class execRequest {
         this.jsScript = jsScript;
     }
 
-    YarnProtos.ApplicationUpdateTimeoutMapProto;
     @Override
     public String toString() {
         return (packageID);
