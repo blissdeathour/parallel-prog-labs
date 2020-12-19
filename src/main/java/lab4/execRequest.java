@@ -59,5 +59,7 @@ public class execRequest {
         return (this.jsScript);
     }
 
-    
+    public void setFuncName(String funcName) {
+        
+    }
 }
