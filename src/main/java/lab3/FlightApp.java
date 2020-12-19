@@ -8,10 +8,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
-import io.*;
-import scala.collection.convert.Wrappers;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 
@@ -69,15 +66,14 @@ public class FlightApp {
             }
         });
 
-        final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportRDD.collectAsMap());
+        final Broadcast<Map<Long, String>> airportInfoBroadcast = sc.broadcast(airportRDD.collectAsMap());
         JavaPairRDD<Tuple2<Long, Long>, FlightData> reducedByKey = flightRDD.reduceByKey(FlightData::fold);
         JavaPairRDD<String, String> result = reducedByKey.mapToPair(e -> {
-            String name = String.format("[%d] %s -> [%d] %s", e._1._1, airportInfoBroadcasted.value().get(e._1._1),
-                    e._1._2, airportInfoBroadcasted.value().get(e._1._2));
+            String name = String.format("[%d] %s -> [%d] %s", e._1._1, airportInfoBroadcast.value().get(e._1._1),
+                    e._1._2, airportInfoBroadcast.value().get(e._1._2));
             String val = String.format("Min: %f; Ration: %.2f%%; Total: %d", e._2.minDelay, e._2.getRatio() * 100.f, e._2.totCount);
             return (new Tuple2<>(name, val));
         });
-
         result.saveAsTextFile(args[2]);
     }
 }

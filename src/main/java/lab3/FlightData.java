@@ -46,5 +46,4 @@ public class FlightData {
         }
         return (new FlightData(delay, totCount + obj.totCount, wrongCount + obj.wrongCount));
     }
-
 }
