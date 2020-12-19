@@ -12,6 +12,10 @@ import javax.script.ScriptEngineManager;
 public class ImplementActor extends AbstractActor {
     private final static String ENGINE_NAME = "nashorn";
 
+    private void show_msg(String msg, String packageID, String testName) {
+        System.out.printf(msg + packageID + '-' + testName);
+    }
+
     private static TestsResult execTests(execMsg msg) throws Exception {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
         engine.eval(msg.getCode());
@@ -22,7 +26,7 @@ public class ImplementActor extends AbstractActor {
         for (execRequest.TestEntry test : msg.getTests()) {
             String result = invocable.invokeFunction(msg.getFunction(), test.getParams()).toString();
             if (result.equals(test.getExpectedResult())) {
-                System.out.println("");
+                show
             }
         }
     }
