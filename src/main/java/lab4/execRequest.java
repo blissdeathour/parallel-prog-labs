@@ -6,13 +6,40 @@ public class execRequest {
         private String expectedResult;
         private Object[] params;
 
-        public TestEntry(String t)
+        public TestEntry(String testName, String expectedResult, Object[] params) {
+            this.testName = testName;
+            this.expectedResult = expectedResult;
+            this.params = params;
+        }
+
+        public String getTestName() {
+            return (this.testName);
+        }
+
+        public void setTestName(String testName) {
+            this.testName = testName;
+        }
+
+        public void setExpectedResult(String expectedResult) {
+            this.expectedResult = expectedResult;
+        }
+
+         public Object[] getParams() {
+            return (this.params);
+         }
+
+         public void setParams(Object[] params) {
+            this.params = params;
+         }
+
+         @Override
+        public String toString() {
+            return testName;
+         }
     }
-    public String packageID;
-    public String jsScript;
-    public String funcName;
-
-
+    private String packageID;
+    private String jsScript;
+    private String funcName;
 
     public execRequest(String packageID, String jsScript, String funcName) {
         this.packageID = packageID;
@@ -20,5 +47,13 @@ public class execRequest {
         this.funcName = funcName;
     }
 
+    public String getPackageID() {
+        return (this.packageID);
+    }
 
+    public void setPackageID(String packageID) {
+        this.packageID = packageID;
+    }
+
+    
 }
