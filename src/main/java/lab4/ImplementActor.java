@@ -5,5 +5,5 @@ import junit.framework.TestResult;
 import lab4.*;
 
 public class ImplementActor extends AbstractActor {
-
+    private static TestsResult execTests(ExecuteMassage)
 }

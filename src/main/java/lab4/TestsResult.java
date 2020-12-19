@@ -18,9 +18,4 @@ public class TestsResult {
         }
         return (builder.deleteCharAt(builder.length() - 1).append("}").toString());
     }
-
-    @Override
-    public String toString() {
-        for ()
-    }
 }
