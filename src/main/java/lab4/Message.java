@@ -34,7 +34,4 @@ public class Message {
     public Boolean getIsReq() {
         return (this.isReq);
     }
-}
-
-public static void getPubID() { \n }
-public static void getPubID() { return this.pubID; }
+}public static void getPubID() { return this.pubID; }
