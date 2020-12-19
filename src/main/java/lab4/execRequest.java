@@ -55,38 +55,7 @@ public class execRequest {
         this.tests = tests;
     }
 
-    public String getPackageID() {
-        return (this.packageID);
-    }
-
-    public void setPackageID(String packageID) {
-        this.packageID = packageID;
-    }
-
-    public String getJsScript() {
-        return (this.jsScript);
-    }
-
-    public void setFuncName(String funcName) {
-        this.funcName = funcName;
-    }
-
-    public String getFuncName() {
-        return (this.funcName);
-    }
-
-    public TestEntry[] getTests() {
-        return (this.tests);
-    }
-
-    public void setTests(TestEntry[] tests) {
-        this.tests = tests;
-    }
-
-    public void setJsScript(String jsScript) {
-        this.jsScript = jsScript;
-    }
-
+   
     @Override
     public String toString() {
         return (packageID);
