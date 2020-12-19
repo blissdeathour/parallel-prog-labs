@@ -1,9 +1,13 @@
 package lab4;
 
 import akka.actor.AbstractActor;
-import junit.framework.TestResult;
-import lab4.*;
+import lab4.TestsResult;
+import lab4.execMsg;
 
 public class ImplementActor extends AbstractActor {
-    private static TestsResult execTests(ExecuteMassage)
+    private final static String ENGINE_NAME = "nashorn";
+
+    private static TestsResult execTests(execMsg msg) throws Exception {
+        
+    }
 }
