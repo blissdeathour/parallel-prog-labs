@@ -19,6 +19,8 @@ public class ImplementActor extends AbstractActor {
         Invocable invocable = (Invocable) engine;
         TestsResult testsResult = new TestsResult();
 
-        for (execRequest.TestEntry : msg.tes)
+        for (execRequest.TestEntry : msg.tests) {
+            String result = invocable.invokeFunction(msg.)
+        }
     }
 }
