@@ -42,7 +42,7 @@ public class ImplementActor extends AbstractActor {
                 .match(ExecMsg.class, msg -> {
                     System.out.printf("Execute: %s\n", msg.toString());
                     TestsResult result = execTests(msg);
-                    sender().tell(new StoreMessage(msg.getPackageID(), result, true), self());
+                    sender().tell(new Message(msg.getPackageID(), result, true), self());
                 })
                 .build();
     }
