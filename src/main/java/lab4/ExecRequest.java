@@ -2,7 +2,7 @@ package lab4;
 
 import org.apache.hadoop.yarn.proto.YarnProtos;
 
-public class execRequest {
+public class ExecRequest {
     public static class TestEntry {
         private String testName;
         private String expectedResult;
@@ -48,9 +48,9 @@ public class execRequest {
     private String funcName;
     private TestEntry[] tests;
 
-    public execRequest(){ }
+    public ExecRequest(){ }
 
-    public execRequest(String packageID, String jsScript, String funcName, TestEntry[] tests) {
+    public ExecRequest(String packageID, String jsScript, String funcName, TestEntry[] tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
         this.funcName = funcName;

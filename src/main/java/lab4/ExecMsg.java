@@ -1,19 +1,19 @@
 package lab4;
 
-public class execMsg extends execRequest {
+public class ExecMsg extends ExecRequest {
     private String packageID;
     private String code;
     private String function;
     private TestEntry[] tests;
 
-    public execMsg(String packageID, String code, String function, TestEntry[] tests) {
+    public ExecMsg(String packageID, String code, String function, TestEntry[] tests) {
         this.packageID = packageID;
         this.code = code;
         this.function = function;
         this.tests = tests;
     }
 
-    public execMsg() { }
+    public ExecMsg() { }
 
     public void setCode(String code) {
         this.code = code;

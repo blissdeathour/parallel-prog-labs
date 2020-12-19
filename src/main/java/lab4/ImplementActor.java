@@ -1,9 +1,8 @@
 package lab4;
 
 import akka.actor.AbstractActor;
-import lab4.TestsResult;
-import lab4.execMsg;
-import lab4.execRequest;
+import akka.japi.pf.ReceiveBuilder;
+import junit.framework.TestResult;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -16,14 +15,14 @@ public class ImplementActor extends AbstractActor {
         System.out.printf(msg + packageID + '-' + testName);
     }
 
-    private TestsResult execTests(execMsg msg) throws Exception {
+    private TestsResult execTests(ExecMsg msg) throws Exception {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
         engine.eval(msg.getCode());
 
         Invocable invocable = (Invocable) engine;
         TestsResult testsResult = new TestsResult();
 
-        for (execRequest.TestEntry test : msg.getTests()) {
+        for (ExecRequest.TestEntry test : msg.getTests()) {
             String result = invocable.invokeFunction(msg.getFunction(), test.getParams()).toString();
             if (result.equals(test.getExpectedResult())) {
                 show_msg("Test passed: ", msg.getPackageID(), test.getTestName());
@@ -39,6 +38,12 @@ public class ImplementActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return 
+        return ReceiveBuilder.create()
+                .match(ExecMsg.class, msg -> {
+                    System.out.printf("Execute: %s\n", msg.toString());
+                    TestsResult result = execTests(msg);
+                    sender().tell(new StoreMessage(msg.getPackageID(), result, true), self());
+                })
+                .build();
     }
 }
