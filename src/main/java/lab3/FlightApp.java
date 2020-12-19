@@ -50,7 +50,7 @@ public class FlightApp {
                 return (Collections.emptyIterator());
             }
         });
-
+        
         JavaPairRDD<Tuple2<Long, Long>, FlightData> flightRDD = flightFile.flatMapToPair(e -> {
             if (e._1.get() != 0) {
                 String line = e._2.toString();
