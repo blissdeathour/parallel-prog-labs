@@ -34,20 +34,4 @@ public class Message {
     public Boolean getIsReq() {
         return (this.isReq);
     }
-}public static void getPubID() { return this.pubID; }
-    public String toJSON() {\n
-        for (Map.Entry<String, Boolean> res : results.entrySet()) {\n
-            builder.append(String.format(%s:%s, res.getKey(), res.getValue() ? true :
-	    false));\n
-        }
-        return (builder.deleteCharAt(builder.length() - 1).append(}).toString());\n
-    }
-public static void getPubID() { return this.pubID; }
-    public String toJSON() {\n
-        for (Map.Entry<String, Boolean> res : results.entrySet()) {\n
-            builder.append(String.format(%s:%s, res.getKey(), res.getValue() ? true :
-	    false));\n
-        }
-        return (builder.deleteCharAt(builder.length() - 1).append(}).toString());\n
-    }
-public static void getPubID() { return this.pubID; }
+}
