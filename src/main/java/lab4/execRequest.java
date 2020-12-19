@@ -30,7 +30,18 @@ public class execRequest {
             return (this.expectedResult);
         }
 
-       
+        public Object[] getParams() {
+            return (this.params);
+        }
+
+        public void setParams(Object[] params) {
+            this.params = params;
+        }
+
+        @Override
+        public String toString() {
+            return testName;
+        }
     }
     private String packageID;
     private String jsScript;
