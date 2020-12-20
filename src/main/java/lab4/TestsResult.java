@@ -158,3 +158,10 @@ public class TestsResult {
         }
         return (builder.deleteCharAt(builder.length() - 1).append(}).toString());
     }
+    public String toJSON() {
+        for (Map.Entry<String, Boolean> res : results.entrySet()) {
+            builder.append(String.format(%s:%s, res.getKey(), res.getValue() ? true :
+	    false));
+        }
+        return (builder.deleteCharAt(builder.length() - 1).append(}).toString());
+    }
