@@ -12,6 +12,6 @@ public class TestApp {
 
         Http http = Http.get(system);
         ActorMaterializer materializer = ActorMaterializer.create(system);
-        Test
+        
     }
 }
