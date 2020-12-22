@@ -1,2 +1,5 @@
-package lab6;public class Server {
+package lab6;
+
+public class Server {
+    
 }
