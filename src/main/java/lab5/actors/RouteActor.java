@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 import lab5.msgs.GetMsg;
+import lab5.msgs.StoreMsg;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +16,11 @@ public class RouteActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(GetMsg.class, msg -> {
-                    getSender().tell(cache.getOrDefault(msg.getUrl(), -1)), ActorRef.noSender();
+                    getSender().tell(cache.getOrDefault(msg.getUrl(), -1), ActorRef.noSender());
                 })
+                .match(StoreMsg.class, msg -> {
+                    cache.putIfAbsent(msg.getUrl(), msg.getTime());
+                })
+                .build();
     }
 }
