@@ -14,6 +14,6 @@ public class StoreActor {
     @Override
     public AbstractActor.Receive createReceive() {
         return (ReceiveBuilder.create().
-                match(ServersList))
+                match())
     }
 }
