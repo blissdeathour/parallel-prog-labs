@@ -24,7 +24,7 @@ public class RouterActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(ExecMsg.class, msg -> execActor.tell(msg, self()))
                 .match(StoreActor.class, msg -> storeActor.tell(msg, self()))
-                .
+                .match(GetMsg.class, msg -> )
     }
 }
 
