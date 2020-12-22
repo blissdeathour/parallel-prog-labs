@@ -1,6 +1,7 @@
 package lab6;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.Collections;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 public class StoreActor {
-    private List<Object> servers = Collections.emptyList();
+    private List<String> servers = Collections.emptyList();
     private Random random = new Random();
 
     @Override
