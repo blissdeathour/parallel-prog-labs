@@ -11,6 +11,10 @@ public class StoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create(). match(())
+        return ReceiveBuilder.create(). match(StoreMsg.class, msg -> {
+            System.out.printf("StoreActor: %s\n", msg.toString());
+            testsResults.put(msg.getPackageId(), msg.getRes());
+        })
+                .match()
     }
 }
