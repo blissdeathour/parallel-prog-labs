@@ -53,6 +53,8 @@ public class CacheTestApp{
                                     long start = System.currentTimeMillis();
                                     asyncHttpClient().prepareGet(url).execute();
                                     long finish = System.currentTimeMillis();
+                                    int time = (int)(finish - start);
+                                    return
                                 })
                     }))
                 })
