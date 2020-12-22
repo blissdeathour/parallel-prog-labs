@@ -16,7 +16,10 @@ public class StoreActor {
     public AbstractActor.Receive createReceive() {
         return (ReceiveBuilder.create()
                 .match(ServersList.class, msg -> servers = msg.getServers()))
-                .match(ServerClass.class, msg -> getSender().tell(servers.get(random.nextInt())))
+                .match(ServerClass.class, msg -> sender().tell(servers.get(random.nextInt())))
                 .build();
+    }
+
+    private ActorRef sender() {
     }
 }
