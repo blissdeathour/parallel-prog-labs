@@ -4,7 +4,9 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
@@ -29,6 +31,8 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 public class CacheTestApp{
     private static final String URL_ARG = "testURL";
     private static final String COUNT = "count";
+    private static final String HOST = "localhost";
+    private static final int PORT = 8080;
     private static final int CONST = 1;
     private static final Duration TIMEOUT = Duration.ofSeconds(5);
 
@@ -68,6 +72,12 @@ public class CacheTestApp{
                     actorRef.tell(new StoreMsg(r.first(), r.second()), ActorRef.noSender());
                     return (HttpResponse.create().withEntity(r.second().toString() + '\n'));
                 });
-        
+
+        CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow,
+                ConnectHttp.toHost(HOST, PORT), materializer);
+
+        System.out.printf("Server listening...");
+        System.in.read();
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
     }
 }
