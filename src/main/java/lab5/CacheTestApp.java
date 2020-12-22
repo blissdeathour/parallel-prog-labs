@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
-import org.asynchttpclient.Dsl.asyncHttpClient;
+import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class CacheTestApp{
     private static final String URL_ARG = "testURL";
@@ -68,6 +68,6 @@ public class CacheTestApp{
                     actorRef.tell(new StoreMsg(r.first(), r.second()), ActorRef.noSender());
                     return (HttpResponse.create().withEntity(r.second().toString() + '\n'));
                 });
-
+        
     }
 }
