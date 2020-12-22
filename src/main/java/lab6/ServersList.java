@@ -1,2 +1,5 @@
-package lab6;public class ServersList {
+package lab6;
+
+public class ServersList {
+    
 }
