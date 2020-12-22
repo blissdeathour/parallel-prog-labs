@@ -34,4 +34,8 @@ public class StoreMsg {
     public boolean getIsReq() {
         return (this.isReq);
     }
+
+    public String printMsg() {
+        return (String.format("%s - %s", packageId, res.toString()));
+    }
 }
