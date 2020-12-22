@@ -1,9 +1,9 @@
 package lab6;
 
-public class Server {
+public class ServerClass {
     private String url;
 
-    public Server(String url) {
+    public ServerClass(String url) {
         this.url = url;
     }
 
