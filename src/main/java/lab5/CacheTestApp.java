@@ -56,7 +56,7 @@ public class CacheTestApp{
                                     int time = (int)(finish - start);
                                     return CompletableFuture.completedFuture(time);
                                 });
-                        return (Sout)
+                        return (Sourse.sinle(r).vi)
                     }))
                 })
     }
