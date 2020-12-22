@@ -1,7 +1,10 @@
-package lab4;
+package lab4.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import lab4.msgs.GetMsg;
+import lab4.msgs.StoreMsg;
+import lab4.msgs.TestsResult;
 
 import java.util.HashMap;
 import java.util.Map;

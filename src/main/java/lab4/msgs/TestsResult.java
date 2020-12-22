@@ -1,4 +1,4 @@
-package lab4;
+package lab4.msgs;
 
 import java.util.HashMap;
 import java.util.Map;

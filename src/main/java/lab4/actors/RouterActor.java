@@ -1,4 +1,4 @@
-package lab4;
+package lab4.actors;
 
 import akka.actor.AbstractActor;
 import akka.actor.Props;
@@ -7,6 +7,8 @@ import akka.actor.ActorRef;
 import akka.pattern.Patterns;
 import akka.routing.BalancingPool;
 import akka.util.Timeout;
+import lab4.msgs.ExecMsg;
+import lab4.msgs.GetMsg;
 import org.junit.Before;
 import scala.concurrent.Await;
 import java.time.Duration;

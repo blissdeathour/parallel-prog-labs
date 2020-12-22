@@ -1,6 +1,4 @@
-package lab4;
-
-import org.apache.hadoop.yarn.proto.YarnProtos;
+package lab4.msgs;
 
 public class ExecRequest {
     public static class TestEntry {

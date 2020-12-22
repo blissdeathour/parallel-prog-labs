@@ -1,8 +1,11 @@
-package lab4;
+package lab4.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
-import junit.framework.TestResult;
+import lab4.msgs.ExecMsg;
+import lab4.msgs.ExecRequest;
+import lab4.msgs.Message;
+import lab4.msgs.TestsResult;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;

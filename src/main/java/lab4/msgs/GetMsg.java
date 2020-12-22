@@ -1,4 +1,4 @@
-package lab4;
+package lab4.msgs;
 
 public class GetMsg {
     private String packageId;

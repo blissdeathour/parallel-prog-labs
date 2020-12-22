@@ -1,4 +1,4 @@
-package lab4;
+package lab4.msgs;
 
 public class ExecMsg extends ExecRequest {
     private String packageID;

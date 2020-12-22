@@ -1,4 +1,4 @@
-package lab4;
+package lab4.msgs;
 
 public class Message {
     private String packageID;
