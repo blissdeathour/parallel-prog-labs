@@ -19,8 +19,6 @@ public class CacheTestApp{
         ActorRef actorRef = system.actorOf(Props.create(RouteActor.class));
         Http http = Http.get(system);
         ActorMaterializer materializer = ActorMaterializer.create(system);
-        Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = route(
-                
-        )
+        Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = Flow.of(HttpRequest.class)
     }
 }
