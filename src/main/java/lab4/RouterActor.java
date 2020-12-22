@@ -21,8 +21,10 @@ public class RouterActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create().
-                match(ExecMsg.class, msg -> execActor)
+        return ReceiveBuilder.create()
+                .match(ExecMsg.class, msg -> execActor.tell(msg, self()))
+                .match(StoreActor.class, msg -> storeActor.tell(msg, self()))
+                .
     }
 }
 
