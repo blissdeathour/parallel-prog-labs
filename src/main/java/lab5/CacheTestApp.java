@@ -9,10 +9,14 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.Query;
 import akka.japi.Pair;
+import akka.stream.javadsl.Keep;
+import akka.stream.javadsl.Sink;
+import akka.stream.javadsl.Source;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import lab4.msgs.GetMsg;
+import lab5.msgs.GetMsg;
+import lab5.msgs.StoreMsg;
 import lab5.actors.RouteActor;
 
 import java.time.Duration;
@@ -20,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
-import static org.asynchttpclient.Dsl.asyncHttpClient;
+import org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class CacheTestApp{
     private static final String URL_ARG = "testURL";
@@ -56,8 +60,14 @@ public class CacheTestApp{
                                     int time = (int)(finish - start);
                                     return CompletableFuture.completedFuture(time);
                                 });
-                        return (Sourse.sinle(r).vi)
-                    }))
+                        return (Source.single(r).via(reqFlow).toMat(Sink.fold(0, Integer::sum), Keep.right()))
+                                .run(materializer).thenApply(sum -> new Pair<>(r.first(), (sum / r.second())));
+                    }));
                 })
+                .map(r -> {
+                    actorRef.tell(new StoreMsg(r.first(), r.second()), ActorRef.noSender());
+                    return (HttpResponse.create().withEntity(r.second().toString() + '\n'));
+                });
+
     }
 }
