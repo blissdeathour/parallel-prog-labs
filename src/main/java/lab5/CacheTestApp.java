@@ -52,7 +52,7 @@ public class CacheTestApp{
                                 .mapAsync(r.second(), url -> {
                                     long start = System.currentTimeMillis();
                                     asyncHttpClient().prepareGet(url).execute();
-                                    
+                                    long finish = System.currentTimeMillis();
                                 })
                     }))
                 })
