@@ -1,6 +1,9 @@
 package lab6;
 
-public class ZooKeeper {
+import akka.actor.ActorRef;
+import org.apache.zookeeper.Watcher;
 
-    public ZooKeeper()
+public class ZooKeeper implements Watcher {
+
+    public ZooKeeper(ActorRef )
 }
