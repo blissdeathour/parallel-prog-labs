@@ -2,10 +2,10 @@ package lab6;
 
 import java.util.List;
 
-public class ServersList {
+public class Message {
     private List<String> servers;
 
-    public ServersList(List<String> servers) {
+    public Message(List<String> servers) {
         this.servers = servers;
     }
 
