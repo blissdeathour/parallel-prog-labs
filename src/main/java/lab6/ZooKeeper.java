@@ -5,5 +5,5 @@ import org.apache.zookeeper.Watcher;
 
 public class ZooKeeper implements Watcher {
 
-    public ZooKeeper(ActorRef )
+    public ZooKeeper(ActorRef storage) 
 }
